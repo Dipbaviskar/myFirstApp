@@ -1,0 +1,22 @@
+.card {
+    background-color: rgb(24, 132, 126);
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+    color: azure;
+}
+
+.dash {
+    height: 50px;
+    background-color: rgb(24, 132, 126);
+    text-align: center;
+    color: azure;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+span {
+    color: rgb(41, 204, 225);
+    font-weight: 300;
+    font-size: 25px;
+}

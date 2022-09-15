@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                </div>
+                <div>
+                    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+                        <div class="mb-3 form-group">
+                            <label for="Email" class="form-label">Email address</label>
+                            <input ngModel name="email" required email type="email" class="form-control" id="Email" #Email="ngModel">
+                            <small *ngIf="Email.errors && Email.errors?.['required'] && Email.touched">Email is required</small>
+                            <small *ngIf="Email.errors && Email.errors?.['email'] && Email.touched">Email address should be valid</small>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input ngModel name="password" required type="password" class="form-control" id="password" #password="ngModel">
+                            <small *ngIf="!password.valid && password.touched">Password is required</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary" routerLink="/dashboard" [disabled]="!myForm.valid">Login</button>
+                    </form>
+                    <a routerLink="/registration">New User? Click here to Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

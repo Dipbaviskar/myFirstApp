@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Registration</h1>
+                </div>
+                <div>
+                    <form [formGroup]="myForm">
+                        <div class="form-group">
+                            <label class="col-form-label">Name:</label>
+                            <input formControlName="name" type="text" class="form-control">
+                            <small *ngIf="name?.invalid && name?.touched" class="text-danger">Name is Required</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Email:</label>
+                            <input formControlName="email" type="text" class="form-control">
+                            <small *ngIf="email?.invalid && email?.touched" class="text-danger">Email is
+                                Required</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Phone:</label>
+                            <input formControlName="phone" type="text" class="form-control">
+                            <small *ngIf="phone?.invalid && phone?.touched" class="text-danger">Phone no is 
+                                Required(minimum length 10,numbers are only allowed)</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Gender:</label>
+                                    <div class="custom-control custom-radio">
+                                        <input id="male" type="radio" class="custom-control-input" value="male"
+                                            name="gender" formControlName="gender">
+                                        <label class="custom-control-label" for="male">Male</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                        <input id="female" type="radio" class="custom-control-input" value="female"
+                                            name="gender" formControlName="gender">
+                                        <label class="custom-control-label" for="female">Female</label>
+                                    </div>
+
+                                    <small class="invalid-feedback" *ngIf="gender?.invalid && gender?.touched">
+                                        Please select either value</small>
+                                </div>
+                         <div class="form-group">
+                                <label class="col-form-label">Password:</label>
+                                <input formControlName="Password" type="text" class="form-control">
+                                <small *ngIf="Password?.invalid && Password?.touched" class="text-danger"> Password is
+                                    Required</small>
+                         </div>
+                            <button (click)="clicksub()" [disabled]="myForm.invalid" type="submit"
+                                class="btn btn-primary mb-3 mt-3">Submit</button>
+                    </form>
+                    <a routerLink="/login">Already Registered Click to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
